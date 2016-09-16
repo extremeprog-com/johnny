@@ -1,0 +1,28 @@
+{
+  "WS Server": {
+    "should register browser and connect it with runner lib": [
+      "func ws/register_browser: register browser, request browser, send browser id",
+      "func ws/request_browser: request browser, register browser, send browser id"
+    ],
+    "should transfer action from runner to browser and return result": [
+      "func ws/runner_action_done: catch action, transfer to browser, return action id to runner, catch action done, return result to runner",
+      "func ws/runner_action_fail: catch action, transfer to browser, return action id to runner, catch action fail, return result to runner",
+      "func ws/browser_unresponsive: catch action, transfer to browser, return action id to runner, browser unresponsive, send error to runner",
+      "func ws/browser_reconnect : catch action, transfer to browser, return action id to runner, browser unresponsive, browser re-registeres, send result to runner"
+    ],
+    "should transfer log from browser to runner": [
+      "func ws/browser_logs: catch action, transfer to browser, catch log from browser, send it to runner"
+    ]
+  },
+  "Browser Client": {
+
+  },
+  "Test Runner Lib": {
+    "should execute test script": [
+      "func runner/request: request browser, execute positive/negative script with parameters, fetch logs, show result"
+    ],
+    "should generate link for browser": [
+      "func runner/request: run with johnny server url and generate johnny link"
+    ]
+  }
+}

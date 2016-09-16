@@ -1,0 +1,31 @@
+{
+  "name": "johnny",
+  "version": "1.0.0",
+  "description": "Johnny testing framework and runner.",
+  "main": "server.js",
+  "scripts": {
+    "test": "bash -c 'MOCHA_COLORS=true ./node_modules/.bin/mocha -b --sort --full-trace tests/*/*.js | node tests_add_stack.js; test \"${PIPESTATUS[0]}\" -eq \"0\" && node tests_check.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extremeprog-com/johnny.git"
+  },
+  "keywords": [
+    "johnny",
+    "testrunner"
+  ],
+  "author": "Alexandra Murzina, Oleg Sergienko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/extremeprog-com/johnny/issues"
+  },
+  "homepage": "https://github.com/extremeprog-com/johnny#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "core-os": "^0.1.0",
+    "express": "^4.14.0",
+    "mocha": "^3.0.2",
+    "sockjs": "^0.3.17",
+    "sockjs-client": "^1.1.1"
+  }
+}
